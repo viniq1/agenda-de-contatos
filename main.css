@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c8a273;
+    background-image: url(https://s.rsg.sc/sc/images/rdr2catalogue/backgrounds/bgMain.jpg);
+    padding-top: 100px;
+    color: white;
+}
+
+header {
+    margin-bottom: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    height: 96px;
+    margin-right: 16px;
+}
+
+header h1 {
+    font-size: 68px;
+    font-weight: normal;
+    color: #2e2e2e;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+}
+
+header h2 {
+    display: block;
+}
+
+.container {
+    max-width: 940px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    max-width: 940px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 56px;
+}
+
+form input {
+    font-size: 24px;
+    color: white;
+    font-family: 'Patrick Hand', cursive;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: rgba(46, 46, 46, 0.85);
+}
+
+form button {
+    background-color: #81684a;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 8px 30px;
+    font-family: 'Amatic SC', cursive;
+}
+
+form button:hover {
+    background-image: url(https://s.rsg.sc/sc/images/rdr2catalogue/backgrounds/bgTextDark.png);
+}
+
+table {
+    width: 100%;
+}
+
+table th {
+    border-bottom: 2px solid #2e2e2e;
+    color: #2e2e2e;
+    padding: 16px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Amatic SC', cursive;
+
+}
+
+table td {
+    text-align: center;
+    font-size: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+table td img {
+    height: 30px;
+}
