@@ -1,27 +1,46 @@
 const form = document.getElementById('form-agenda');
 const inputContato = document.getElementById('nome-contato');
-const inputDDD = document.getElementById('ddd-telefone')
-const inputNumero = document.getElementById('numero-telefone');
+const inputTel = document.getElementById('numero-telefone');
+let linhas = [];
+let numerosTelefone = [];
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function(e){
     e.preventDefault();
     adicionaLinha();
+    atualizaLista();
 })
 
-function adicionaLinha () {
-    const telefoneCompleto = inputDDD + ' ' + inputNumero;
+function formataTelefone(telefone) {
+    if (telefone.length >= 10) {
+        const ddd = telefone.substring(0, 2);
+        const numero = telefone.substring(2);
+        return `(${ddd}) ${numero}`;
+    } else {
+        return telefone;
+    }
+}
 
-    if (contato.includes(inputContato.value)) {
-        alert(`O contato: ${inputContato.value} ja foi inserido!`);
-    } else {        
-            let linha = '<tr>';
-            linha += `<td>${inputContato.value}</td>`;
-            linha += `<td>${telefoneCompleto.value}</td>`;
-            linha += `</tr>`;
-            
-            linhas += linha
-        }
+function adicionaLinha (){
+    const numeroTelefoneFormatado = formataTelefone(inputTel.value);
 
-        inputNomeAtividade.value='';
-        inputNotaAtividade.value='';
+    if (numerosTelefone.includes(numeroTelefoneFormatado)) {
+        alert(`O número de telefone: ${numeroTelefoneFormatado} já foi inserido`);
+    } else {
+        let linha = '<tr>';
+
+        linha += `<td>${inputContato.value}</td>`;
+        linha += `<td>${numeroTelefoneFormatado}</td>`;
+        linha += '</tr>';
+    
+        linhas.push(linha);
+        numerosTelefone.push(numeroTelefoneFormatado);
+    
+        inputContato.value = '';
+        inputTel.value = '';
+    }
+}
+
+function atualizaLista () {
+    const corpoLista = document.querySelector('tbody');
+    corpoLista.innerHTML = linhas.join('');
 }

@@ -21,8 +21,7 @@
             </header>
             <form id="form-agenda">
                 <input type="text" id="nome-contato" required placeholder="Nome do contato"/>
-                <input type="number" id="ddd-telefone" required placeholder="DDD"/>
-                <input type="number" id="numero-telefone" required placeholder="Número de telefone"/>
+                <input type="tel" pattern="[0-9]{8,11}" id="numero-telefone" required placeholder="Digite o DDD e o número"/>
                 <button type="submit">Anotar</button>
             </form>
             <table cellspacing="0">
@@ -36,5 +35,8 @@
                 </thead>
                 <tbody>
                 </tbody>
-</body>
+            </table>
+        </div>
+        <script src="./main.js"></script>
+    </body>
 </html>
